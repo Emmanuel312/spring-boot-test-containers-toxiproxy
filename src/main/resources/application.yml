@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          cat-pay:
+            url: http://localhost:3000
+            connectTimeout: 1000
+            readTimeout: 1000
+          dog-pay:
+            url: http://localhost:3001

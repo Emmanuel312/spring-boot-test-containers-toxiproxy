@@ -1,0 +1,18 @@
+version: '3'
+services:
+  payment-gateway-1:
+    image: wiremock/wiremock
+    ports:
+      - "3000:8080"
+    volumes:
+      - ./local/wiremock:/home/wiremock/mappings
+    environment:
+      - "EXTENSIONS_DIR=/home/wiremock/extensions"
+  payment-gateway-2:
+    image: wiremock/wiremock
+    ports:
+      - "3001:8080"
+    volumes:
+      - ./local/wiremock:/home/wiremock/mappings
+    environment:
+      - "EXTENSIONS_DIR=/home/wiremock/extensions"
